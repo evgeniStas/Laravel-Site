@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Mar 02, 2018 at 01:04 PM
+-- Generation Time: Mar 02, 2018 at 04:41 PM
 -- Server version: 5.7.21-0ubuntu0.16.04.1
 -- PHP Version: 7.0.25-0ubuntu0.16.04.1
 
@@ -19,6 +19,26 @@ SET time_zone = "+00:00";
 --
 -- Database: `laravel_db`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `admins`
+--
+
+CREATE TABLE `admins` (
+  `id` int(11) NOT NULL,
+  `email` text NOT NULL,
+  `password` text NOT NULL,
+  `remember_token` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `admins`
+--
+
+INSERT INTO `admins` (`id`, `email`, `password`, `remember_token`) VALUES
+(1, 'evgeni_stas@swiego.com', '$2y$10$dMDlc1GdbPo9tC1xIjkKv.oViWKts..bUsDyVIM0cZTs1sUNyNOq6', 'NubdDRpcEMgjRDTSI7t325kOhnizn3m0fVQ27R102sUpCQ0QHIbkDaDPzGwk');
 
 -- --------------------------------------------------------
 
@@ -43,6 +63,12 @@ INSERT INTO `users` (`id`, `name`) VALUES
 --
 
 --
+-- Indexes for table `admins`
+--
+ALTER TABLE `admins`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `users`
 --
 ALTER TABLE `users`
@@ -52,6 +78,11 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for dumped tables
 --
 
+--
+-- AUTO_INCREMENT for table `admins`
+--
+ALTER TABLE `admins`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 --
 -- AUTO_INCREMENT for table `users`
 --
