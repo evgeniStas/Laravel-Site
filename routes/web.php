@@ -11,12 +11,12 @@
 |
 */
 
-Route::get('/', function () {
+Route::get('/', function () { // Main page of site
     return view('welcome');
 });
-Route::get('/test', function () {
-    $results = DB::select('select * from users');
-    var_dump($results);
+Route::get('/admin', function () { // Display Admin page
+    return view('admin');
 });
+Route::post('/admin/login', 'AdminController@login'); // Admin Login Form
 
 
