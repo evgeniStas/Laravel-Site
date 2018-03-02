@@ -14,9 +14,18 @@
 Route::get('/', function () { // Main page of site
     return view('welcome');
 });
-Route::get('/admin', function () { // Display Admin page
-    return view('admin');
+Route::any('/admin', function () { // Display Admin page
+    if (Auth::check())
+    {
+        return view('admin/dashboard');
+    }else {
+        return view('admin/login');
+    }
 });
 Route::post('/admin/login', 'AdminController@login'); // Admin Login Form
+Route::get('/admin/logout', function () { // Logout function
+    Auth::logout();
+    return view('admin/login')->with(["success_message"=>1,"message"=>"You have successfully signed out"]);
+})->name('logout');
 
 

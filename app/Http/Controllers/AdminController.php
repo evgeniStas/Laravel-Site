@@ -19,14 +19,10 @@ class AdminController extends Controller
 {
     public function login(Request $request)
     {
-        $user = DB::table('admins')->where('email', $request->email)->first();
-        //var_dump($user);
-
-        if($user && Hash::check($request->password, $user->password)){
-            echo "ok";
+        if (Auth::attempt(['email' => $request->email, 'password' => $request->password])) {
+            return view('admin/dashboard');
         }else{
-            echo "fail";
+            return view('admin/login')->with(["error_message"=>1,"message"=>"Email or password incorrect"]);
         }
-
     }
 }
