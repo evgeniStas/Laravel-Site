@@ -14,18 +14,25 @@
 Route::get('/', function () { // Main page of site
     return view('welcome');
 });
-Route::any('/admin', function () { // Display Admin page
+Route::any('/admin/', function () { // Display Admin page
     if (Auth::check())
     {
         return view('admin/dashboard');
     }else {
         return view('admin/login');
     }
-});
-Route::post('/admin/login', 'AdminController@login'); // Admin Login Form
-Route::get('/admin/logout', function () { // Logout function
+})->name('admin');
+Route::post('/admin/login/', 'AdminController@login'); // Admin Login Form
+Route::get('/admin/logout/', function () { // Logout function
     Auth::logout();
     return view('admin/login')->with(["success_message"=>1,"message"=>"You have successfully signed out"]);
 })->name('logout');
 
+
+Route::get('lang/{locale}', function ($locale) {
+    if (in_array($locale, \Config::get('app.locales'))) {   # Проверяем, что у пользователя выбран доступный язык
+        Session::put('locale', $locale);
+    }
+    return redirect()->back();
+});
 
