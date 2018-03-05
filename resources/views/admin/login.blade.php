@@ -9,6 +9,8 @@
 
         <link href="<?php echo url('css/bootstrap.css') ?>" rel="stylesheet">
         <link href="<?php echo url('css/style.css') ?>" rel="stylesheet">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="<?php echo url('js/bootstrap.js') ?>"></script>
     </head>
     <body class="text-center">
         <form method="POST" action="/admin/login" class="form-signin">
