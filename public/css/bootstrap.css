@@ -67,6 +67,10 @@ body {
   color: #212529;
   text-align: left;
   background-color: #fff;
+  left: 0;
+  margin: 0;
+  overflow: hidden;
+  position: relative;
 }
 
 [tabindex="-1"]:focus {
@@ -1963,8 +1967,9 @@ pre code {
   color: #495057;
   background-color: #fff;
   background-clip: padding-box;
-  border: 1px solid #ced4da;
-  border-radius: 0.25rem;
+  border: none;
+  border-bottom: 1px solid #ced4da;
+  border-radius: 0px;
   transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 }
 
@@ -2741,8 +2746,9 @@ fieldset:disabled a.btn {
 
 .btn-dark {
   color: #fff;
-  background-color: #343a40;
+  background-color: #787878;
   border-color: #343a40;
+  border: none;
 }
 
 .btn-dark:hover {
@@ -3072,7 +3078,7 @@ fieldset:disabled a.btn {
   padding: 0.5rem 1rem;
   font-size: 1.25rem;
   line-height: 1.5;
-  border-radius: 0.3rem;
+  border-radius: 0px;
 }
 
 .btn-sm, .btn-group-sm > .btn {

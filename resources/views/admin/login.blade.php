@@ -11,6 +11,7 @@
         <link href="<?php echo url('css/style.css') ?>" rel="stylesheet">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
         <script src="<?php echo url('js/bootstrap.js') ?>"></script>
+        <script src="<?php echo url('js/main.js') ?>"></script>
     </head>
     <body class="text-center">
         <form method="POST" action="/admin/login" class="form-signin">
@@ -28,7 +29,7 @@
             <label for="inputPassword" class="sr-only">Password</label>
             <input id="inputPassword" type="password" name="password" class="form-control" placeholder="Password" required>
             <p></p>
-            <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+            <button class="btn btn-lg btn-dark btn-block" type="submit">Sign in</button>
         </form>
     </body>
 </html>

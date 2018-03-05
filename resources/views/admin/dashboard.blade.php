@@ -11,38 +11,25 @@
     <link href="<?php echo url('css/style.css') ?>" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="<?php echo url('js/bootstrap.js') ?>"></script>
+    <script src="<?php echo url('js/main.js') ?>"></script>
 </head>
 <body>
-    <div class="container">
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
-            <a class="navbar-brand" href="#">Site title</a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarText">
-                <ul class="navbar-nav mr-auto">
-                    <li class="nav-item active">
-                        <a class="nav-link" href="#">Item 1 <span class="sr-only">(current)</span></a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Item 2</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Item 3</a>
-                    </li><li class="nav-item">
-                        <a class="nav-link" href="#">Item 4</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Item 5</a>
-                    </li>
+    <div class="menu">
+        <div class="icon-close">
+            Close icon
+        </div>
 
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{ route('logout') }}">Exit</a>
-                    </li>
-                </ul>
-            </div>
-        </nav>
-        <hr>
+        <ul>
+            <li>Icon</li>
+            <li>Icon</li>
+            <li>Icon</li>
+            <li>Icon</li>
+        </ul>
+    </div>
+    <div class="container">
+        <div class="icon-menu">
+            <button class="btn">Menu</button>
+        </div>
         <div>
             <h3>Page title</h3>
 
