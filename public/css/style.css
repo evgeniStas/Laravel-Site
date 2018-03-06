@@ -58,3 +58,24 @@
 .icon-menu span {
     color:gray;
 }
+#loginForm .input-group-prepend {
+    padding-top: 10px;
+}
+#loginForm .input-group-text {
+    border-radius: 50%;
+    width: 16px;
+    height: 16px;
+    padding: 0px;
+    margin: 0px;
+    border: none;
+}
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+    transition: background-color 5000s ease-in-out 0s;
+}
+#loginForm .input .placeholder {
+    font-size: 12px;
+    text-align: left;
+}

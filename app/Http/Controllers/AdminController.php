@@ -21,9 +21,9 @@ class AdminController extends Controller
     {
         if (Auth::attempt(['email' => $request->email, 'password' => $request->password])) {
             Auth::login(Auth::user(), true);
-            return view('admin/dashboard');
+            return redirect()->route("admin");
         }else{
-            return view('admin/login')->with(["error_message"=>1,"message"=>"Email or password incorrect"]);
+            return view('admin/login')->with(["error_message"=>1]);
         }
     }
 }

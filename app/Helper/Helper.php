@@ -20,6 +20,7 @@ class Helper
                 return "/lang/".$loc;
             }
         }
+        return "/lang/".$raw_locale;
 
     }
 }

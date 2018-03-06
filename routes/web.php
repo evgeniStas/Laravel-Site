@@ -11,10 +11,21 @@
 |
 */
 
-Route::get('/', function () { // Main page of site
+/*
+ *
+ * Main page of site
+ *
+ * */
+Route::get('/', function () {
     return view('welcome');
 });
-Route::any('/admin/', function () { // Display Admin page
+
+/*
+ *
+ * Display Admin page
+ *
+ * */
+Route::any('/admin/', function () {
     if (Auth::check())
     {
         return view('admin/dashboard');
@@ -22,15 +33,32 @@ Route::any('/admin/', function () { // Display Admin page
         return view('admin/login');
     }
 })->name('admin');
-Route::post('/admin/login/', 'AdminController@login'); // Admin Login Form
-Route::get('/admin/logout/', function () { // Logout function
+
+/*
+ *
+ * Display admin login form
+ *
+ * */
+Route::any('/admin/login/', 'AdminController@login')->name('login');
+
+/*
+ *
+ * Logout function
+ *
+ * */
+Route::get('/admin/logout/', function () {
     Auth::logout();
-    return view('admin/login')->with(["success_message"=>1,"message"=>"You have successfully signed out"]);
+    return view('admin/login')->with(["success_message"=>1]);
 })->name('logout');
 
 
+/*
+ *
+ * Change lang user
+ *
+ * */
 Route::get('/lang/{locale}', function ($locale) {
-    if (in_array($locale, \Config::get('app.locales'))) {   # Проверяем, что у пользователя выбран доступный язык
+    if (in_array($locale, \Config::get('app.locales'))) {
         Session::put('locale', $locale);
     }
     return redirect()->back();
