@@ -24,7 +24,7 @@
             <li>Icon</li>
             <li>Icon</li>
             <li>Icon</li>
-            <li><a href="#">Change lang</a></li>
+            <li><a href="{!! Helper::GetLangUrl() !!}">Change lang</a></li>
             <li><a href="/admin/logout/">Logout</a></li>
         </ul>
     </div>

@@ -29,7 +29,7 @@ Route::get('/admin/logout/', function () { // Logout function
 })->name('logout');
 
 
-Route::get('lang/{locale}', function ($locale) {
+Route::get('/lang/{locale}', function ($locale) {
     if (in_array($locale, \Config::get('app.locales'))) {   # Проверяем, что у пользователя выбран доступный язык
         Session::put('locale', $locale);
     }
