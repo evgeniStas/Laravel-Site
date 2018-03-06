@@ -8,6 +8,7 @@ return [
     'auth_title' => 'Please sign in',
     'email' => 'Email adress',
     'password' => 'Password',
-    'signin' => 'Sign in'
+    'signin' => 'Sign in',
+    'logout' => 'Logout'
 
 ];

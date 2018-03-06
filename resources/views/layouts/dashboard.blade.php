@@ -25,7 +25,7 @@
         <li>Icon</li>
         <li>Icon</li>
         <li><a href="{!! Helper::GetLangUrl() !!}">Change lang</a></li>
-        <li><a href="{{ route('logout') }}">Logout</a></li>
+        <li><a href="{{ route('logout') }}">{{ trans('index.logout') }}</a></li>
     </ul>
 </div>
 <div class="container">
