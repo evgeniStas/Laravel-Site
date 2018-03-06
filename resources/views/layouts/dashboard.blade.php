@@ -20,7 +20,8 @@
     </div>
 
     <ul>
-        <li><a href="{{ route('admin.add') }}">Add new</a></li>
+        <li class="{!! Helper::isActiveRoute('admin') !!}"><a href="{{ route('admin') }}">Dashboard</a></li>
+        <li class="{!! Helper::isActiveRoute('admin.add') !!}"><a href="{{ route('admin.add') }}">Add new</a></li>
         <li>Icon</li>
         <li>Icon</li>
         <li>Icon</li>

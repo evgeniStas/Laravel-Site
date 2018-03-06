@@ -8,6 +8,7 @@
 
 namespace App\Helper;
 use Illuminate\Support\Facades\Config;
+use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Session;
 
 class Helper
@@ -22,5 +23,11 @@ class Helper
         }
         return "/lang/".$raw_locale;
 
+    }
+    public static function isActiveRoute($route, $output = "item")
+    {
+        if (Route::currentRouteName() == $route) return "active";
+
+        return $output;
     }
 }
