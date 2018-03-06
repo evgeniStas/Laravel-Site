@@ -64,3 +64,22 @@ Route::get('/lang/{locale}', function ($locale) {
     return redirect()->back();
 });
 
+/*
+ *
+ *
+ * Dashboard Routes
+ *
+ *
+ *
+ * */
+
+
+Route::get('/admin/add/', function () {
+    if (Auth::check())
+    {
+        return view('admin/add');
+    }else {
+        return view('admin/login');
+    }
+})->name('admin.add');
+

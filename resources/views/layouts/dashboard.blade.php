@@ -20,12 +20,12 @@
     </div>
 
     <ul>
-        <li>Icon</li>
+        <li><a href="{{ route('admin.add') }}">Add new</a></li>
         <li>Icon</li>
         <li>Icon</li>
         <li>Icon</li>
         <li><a href="{!! Helper::GetLangUrl() !!}">Change lang</a></li>
-        <li><a href="/admin/logout/">Logout</a></li>
+        <li><a href="{{ route('logout') }}">Logout</a></li>
     </ul>
 </div>
 <div class="container">
