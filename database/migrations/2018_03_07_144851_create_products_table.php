@@ -18,7 +18,7 @@ class CreateProductsTable extends Migration
             $table->tinyInteger('seller');
             $table->string('title');
             $table->tinyInteger('count');
-            $table->tinyInteger('price');
+            $table->double('price', 8, 2);
             $table->timestamps();
         });
     }

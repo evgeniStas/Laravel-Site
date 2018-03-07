@@ -16,6 +16,16 @@ class CreateOrdersTable extends Migration
         Schema::create('orders', function (Blueprint $table) {
             $table->increments('id');
             $table->tinyInteger('seller');
+            $table->tinyInteger('client');
+            $table->date('date');
+            $table->enum('time', ['6:30-8:00', '8:30-10:00', '10:30-12:00', '12:30-15:00']);
+            $table->string('adress');
+            $table->tinyInteger('truck');
+            $table->string('recipient_name');
+            $table->string('recipient_phone', 20);
+            $table->string('info');
+            $table->double('price', 8, 2);
+            $table->tinyInteger('type_pay')->default('1');
             $table->timestamps();
         });
     }
