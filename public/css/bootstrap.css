@@ -66,7 +66,7 @@ body {
   line-height: 1.5;
   color: #212529;
   text-align: left;
-  background-color: #fff;
+  background-color: rgba(238,238,238,1);
   left: 0;
   margin: 0;
   overflow: hidden;
@@ -2508,8 +2508,8 @@ fieldset:disabled a.btn {
 
 .btn-primary {
   color: #fff;
-  background-color: #007bff;
-  border-color: #007bff;
+  background: linear-gradient(153.62deg, rgba(39,97,255,1) 0%, rgba(41,97,253,1) 8.13%, rgba(0,76,236,0.99) 100%);
+  box-shadow: 0 3px 2px 0 rgba(21,87,227,0.34), 0 5px 7px 0 rgba(0,0,0,0.36);
 }
 
 .btn-primary:hover {
@@ -3078,7 +3078,7 @@ fieldset:disabled a.btn {
   padding: 0.5rem 1rem;
   font-size: 1.25rem;
   line-height: 1.5;
-  border-radius: 0px;
+    border-radius: 27.5px;
 }
 
 .btn-sm, .btn-group-sm > .btn {

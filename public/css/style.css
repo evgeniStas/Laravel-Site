@@ -1,8 +1,11 @@
 .form-signin {
     width: 100%;
     max-width: 330px;
-    padding: 15px;
+    padding: 50px;
     margin: 0 auto;
+    background-color: rgba(255,255,255,1);
+    box-shadow: 0 2px 7px 0 rgba(104,103,103,0.16);
+    border-radius: 23px;
 }
 .menu {
     background: #808080;
@@ -78,4 +81,28 @@ input:-webkit-autofill:active {
 #loginForm .input .placeholder {
     font-size: 12px;
     text-align: left;
+    display:none;
+}
+#loginForm .input .active {
+    display:block;
+}
+.blueBackground {
+    background-color: rgba(35,44,62,1);
+    width: 100%;
+    height: 163px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+}
+.autn-title {
+    color: rgba(255,255,255,1);
+    font-size: 25px;
+    font-weight: bold;
+    line-height: 29px;
+    padding-top: 50px;
+    padding-bottom: 35px;
+    width: 100%;
+    max-width: 330px;
+    margin: 0 auto;;
 }

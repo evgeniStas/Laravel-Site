@@ -2,6 +2,14 @@ var main = function() {
     $('.icon-menu, .icon-close').click(function() {
         ToogleMenu();
     });
+
+    $( "#loginForm input" ).focus(function() {
+        $(this).parent().parent().find( ".placeholder" ).addClass( "active" );
+    });
+    $( "#loginForm input" ).focusout(function() {
+        $(this).parent().parent().find( ".placeholder" ).removeClass( "active" );
+    });
+
 };
 var toogle = 1;
 function ToogleMenu(){

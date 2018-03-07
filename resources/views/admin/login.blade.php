@@ -9,23 +9,23 @@
 
         <link href="<?php echo url('css/bootstrap.css') ?>" rel="stylesheet">
         <link href="<?php echo url('css/style.css') ?>" rel="stylesheet">
-        <script src="://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
         <script src="<?php echo url('js/bootstrap.js') ?>"></script>
         <script src="<?php echo url('js/main.js') ?>"></script>
     </head>
     <body class="text-center">
+        <div class="blueBackground"></div>
+        @isset($error_message)
+            <div class="alert alert-danger">{{ trans('index.error_login') }}</div>
+        @endisset
+        @isset($success_message)
+            <div class="alert alert-success">{{ trans('index.success_exit') }}</div>
+        @endisset
+        <h3 class="autn-title">{{ trans('index.auth_title') }}</h3>
         <form id="loginForm" method="POST" action="{{ route('login') }}" class="form-signin">
             {{ csrf_field() }}
-            @isset($error_message)
-                <div class="alert alert-danger">{{ trans('index.error_login') }}</div>
-            @endisset
-            @isset($success_message)
-                <div class="alert alert-success">{{ trans('index.success_exit') }}</div>
-            @endisset
-
-            <h1 class="h3 mb-3 font-weight-normal">{{ trans('index.auth_title') }}</h1>
             <div class="input">
-                <div class="placeholder">{{ trans('index.email') }}</div>
+                <div class="placeholder active">{{ trans('index.email') }}</div>
                 <div class="input-group mb-3">
                     <div class="input-group-prepend">
                         <span class="input-group-text"></span>
@@ -43,7 +43,7 @@
                 </div>
             </div>
             <p></p>
-            <button class="btn btn-lg btn-dark btn-block" type="submit">{{ trans('index.signin') }}</button>
+            <button class="btn btn-lg btn-primary btn-block" type="submit">{{ trans('index.signin') }}</button>
         </form>
     </body>
 </html>
