@@ -11,7 +11,7 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        $this->call('AdminsTableSeeder');
+        $this->call('SellersTableSeeder');
     }
 }
 
@@ -21,14 +21,14 @@ class DatabaseSeeder extends Seeder
  * 123
  * */
 
-class AdminsTableSeeder extends Seeder {
+class SellersTableSeeder extends Seeder {
 
     public function run()
     {
-        DB::table('admins')->delete();
+        DB::table('sellers')->delete();
 
-        DB::table('admins')->insert(
-            ['email' => 'evgeni_stas@swiego.com', 'password' => '$2y$10$dMDlc1GdbPo9tC1xIjkKv.oViWKts..bUsDyVIM0cZTs1sUNyNOq6', 'remember_token' => 'oQTonsS2AHpE2L9fYBtLuxGqhp7Z5vg1AvxLFCDmycXRinbd2GpxahPZHLYK']
+        DB::table('sellers')->insert(
+            ['name' => 'Evgeni Stas`', 'email' => 'evgeni_stas@swiego.com', 'password' => '$2y$10$dMDlc1GdbPo9tC1xIjkKv.oViWKts..bUsDyVIM0cZTs1sUNyNOq6', 'remember_token' => 'oQTonsS2AHpE2L9fYBtLuxGqhp7Z5vg1AvxLFCDmycXRinbd2GpxahPZHLYK']
         );
     }
 
