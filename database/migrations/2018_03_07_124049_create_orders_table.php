@@ -26,6 +26,10 @@ class CreateOrdersTable extends Migration
             $table->string('info');
             $table->double('price', 8, 2);
             $table->tinyInteger('type_pay')->default('1');
+            $table->enum('status', ['1', '2', '3']); // ['open', 'close', 'cancel']
+            $table->string('signature');
+            $table->tinyInteger('approve')->default('0'); // 0 : not approved, 1 : approved
+            $table->tinyInteger('paid')->default('0'); // 0 : not paid, 1 : paid
             $table->timestamps();
         });
     }
