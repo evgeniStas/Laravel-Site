@@ -33,11 +33,11 @@ class Helper
     }
     public static function checkDate($val){
         if($val == date("Y-m-d")){
-            return "Today";
+            return trans('index.today');
         }
         $yesterday  = date("Y-m-d", mktime(0, 0, 0, date("m"), date("d")-1, date("Y")));
         if($val == $yesterday){
-            return "Yesterday";
+            return trans('index.yesterday');
         }
         $date = new DateTime($val);
         return $date->format('d.m.y');

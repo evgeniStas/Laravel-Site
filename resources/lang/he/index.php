@@ -9,6 +9,8 @@ return [
     'email' => 'H Email adress',
     'password' => 'H Password',
     'signin' => 'H Sign in',
-    'logout' => 'H Logout'
+    'logout' => 'H Logout',
+    'today' => 'H Today',
+    'yesterday' => 'H Yesterday'
 
 ];
