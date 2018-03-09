@@ -20,6 +20,7 @@ class CreateProductsTable extends Migration
             $table->tinyInteger('count');
             $table->double('price', 8, 2);
             $table->string('picture');
+            $table->tinyInteger('category');
             $table->timestamps();
         });
     }

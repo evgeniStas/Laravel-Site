@@ -82,7 +82,10 @@ Route::get('/admin/add/', function () {
     {
         $clients = new \App\Client();
         $clientsAll = $clients->getAll();
-        return view('admin/add')->with(["clients"=>$clientsAll]);
+
+        $categories = new \App\Category();
+        $categoriesAll = $categories->getAll();
+        return view('admin/add')->with(["clients"=>$clientsAll,"categories"=>$categoriesAll]);
     }else {
         return view('admin/login');
     }

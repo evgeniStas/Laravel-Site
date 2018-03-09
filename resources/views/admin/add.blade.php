@@ -18,5 +18,12 @@
             <button class="btn btn-link">Add new client</button>
         </div>
         <h3>Choose product</h3>
+        <ul class="nav nav-pills nav-fill">
+            @foreach ($categories as $category)
+                <li class="nav-item">
+                    <a class="nav-link" href="#">{{ $category->title }}</a>
+                </li>
+            @endforeach
+        </ul>
     </div>
 @endsection
