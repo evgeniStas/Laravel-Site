@@ -38,9 +38,9 @@
             <?php echo Form::text('email', null, ['id' => 'AddClientEmail', 'class' => 'form-control', 'placeholder' => 'example@domain.com', 'required' => 'required']);?>
         </div>
         <div class="form-group">
-            <label for="AddClientGender">Gender</label>
-            <?php echo Form::select('gender', ['2' => 'Male', '1' => 'Female'], 'Male', ['class' => 'form-control', 'id' => 'AddClientGender']);?>
+            <label for="AddClientactivity">Activity</label>
+            <?php echo Form::text('activity', null, ['id' => 'AddClientactivity', 'class' => 'form-control', 'placeholder' => 'Activity']);?>
         </div>
         <button type="submit" class="btn btn-primary btn-lg btn-block">Sign in</button>
-    </form>
+    <?php echo Form::close(); ?>
 @endsection

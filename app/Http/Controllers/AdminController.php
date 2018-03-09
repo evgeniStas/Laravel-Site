@@ -35,8 +35,7 @@ class AdminController extends Controller
                 'first_name' => 'required|max:50',
                 'last_name' => 'required|max:50',
                 'phone' => 'required|unique:clients|max:50',
-                'email' => 'required|email|unique:clients|max:50',
-                'gender' => 'required',
+                'email' => 'required|email|unique:clients|max:50'
             ]);
 
             if ($validator->fails())
@@ -49,7 +48,7 @@ class AdminController extends Controller
                         'last_name' => $request->last_name,
                         'phone' => $request->phone,
                         'email' => $request->email,
-                        'gender' => $request->gender,
+                        'activity' => $request->activity,
                         'seller' => Auth::id()
                     ]
                 );

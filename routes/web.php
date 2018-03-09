@@ -80,7 +80,9 @@ Route::get('/lang/{locale}', function ($locale) {
 Route::get('/admin/add/', function () {
     if (Auth::check())
     {
-        return view('admin/add');
+        $clients = new \App\Client();
+        $clientsAll = $clients->getAll();
+        return view('admin/add')->with(["clients"=>$clientsAll]);
     }else {
         return view('admin/login');
     }
