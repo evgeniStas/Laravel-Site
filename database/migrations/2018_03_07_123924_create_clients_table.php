@@ -19,7 +19,7 @@ class CreateClientsTable extends Migration
             $table->string('last_name');
             $table->string('phone', 20);
             $table->string('email');
-            $table->string('gender');
+            $table->enum('gender', ['1', '2']); // 1 : Feemale, 2 : Male
             $table->tinyInteger('seller');
             $table->timestamps();
         });

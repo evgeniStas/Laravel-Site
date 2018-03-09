@@ -84,5 +84,17 @@ Route::get('/admin/add/', function () {
     }else {
         return view('admin/login');
     }
-})->name('admin.add');
+})->name('admin.addOrder');
+
+
+Route::get('/admin/addClient/', function () {
+    if (Auth::check())
+    {
+        return view('admin/addClient');
+    }else {
+        return view('admin/login');
+    }
+})->name('admin.addClient');
+Route::post('/admin/addClient/', 'AdminController@addClient')->name('AddNewClient');
+
 

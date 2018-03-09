@@ -10,6 +10,7 @@
     <link href="<?php echo url('css/bootstrap.css') ?>" rel="stylesheet">
     <link href="<?php echo url('css/style.css') ?>" rel="stylesheet">
     <script src="//ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="<?php echo url('js/popper.min.js') ?>"></script>
     <script src="<?php echo url('js/bootstrap.js') ?>"></script>
     <script src="<?php echo url('js/main.js') ?>"></script>
 </head>
@@ -20,7 +21,7 @@
         </div>
         <ul>
             <li class="{!! Helper::isActiveRoute('admin') !!}"><a href="{{ route('admin') }}">Dashboard</a></li>
-            <li class="{!! Helper::isActiveRoute('admin.add') !!}"><a href="{{ route('admin.add') }}">Add new</a></li>
+            <li class="{!! Helper::isActiveRoute('admin.add') !!}"><a href="{{ route('admin.addOrder') }}">Add new</a></li>
             <li>Icon</li>
             <li>Icon</li>
             <li>Icon</li>

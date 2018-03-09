@@ -11,6 +11,7 @@ return [
     'signin' => 'H Sign in',
     'logout' => 'H Logout',
     'today' => 'H Today',
-    'yesterday' => 'H Yesterday'
+    'yesterday' => 'H Yesterday',
+    'user_adding' => 'H New user successfully added'
 
 ];

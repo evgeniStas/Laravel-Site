@@ -106,3 +106,14 @@ input:-webkit-autofill:active {
     max-width: 330px;
     margin: 0 auto;;
 }
+.MenuButton, .NewOrder, .NewUser {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+}
+.NewOrder, .NewUser {
+    z-index: 5;
+}
+.NewUser {
+    bottom: 100px;
+}

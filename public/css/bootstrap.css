@@ -5429,16 +5429,20 @@ button.close {
 }
 
 .modal.fade .modal-dialog {
+  /*
   transition: -webkit-transform 0.3s ease-out;
   transition: transform 0.3s ease-out;
   transition: transform 0.3s ease-out, -webkit-transform 0.3s ease-out;
   -webkit-transform: translate(0, -25%);
   transform: translate(0, -25%);
+  */
 }
 
 .modal.show .modal-dialog {
+  /*
   -webkit-transform: translate(0, 0);
   transform: translate(0, 0);
+  */
 }
 
 .modal-dialog-centered {
@@ -5552,10 +5556,11 @@ button.close {
 }
 
 @media (min-width: 576px) {
+  /*
   .modal-dialog {
     max-width: 500px;
     margin: 1.75rem auto;
-  }
+  }*/
   .modal-dialog-centered {
     min-height: calc(100% - (1.75rem * 2));
   }

@@ -13,7 +13,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
-use Illuminate\Support\Facades\Hash;
+use Validator;
 
 class AdminController extends Controller
 {
@@ -24,6 +24,39 @@ class AdminController extends Controller
             return redirect()->route("admin");
         }else{
             return view('admin/login')->with(["error_message"=>1]);
+        }
+    }
+    public function addClient(Request $request){
+
+        if (Auth::check())
+        {
+
+           $validator = Validator::make($request->all(), [
+                'first_name' => 'required|max:50',
+                'last_name' => 'required|max:50',
+                'phone' => 'required|unique:clients|max:50',
+                'email' => 'required|email|unique:clients|max:50',
+                'gender' => 'required',
+            ]);
+
+            if ($validator->fails())
+            {
+                return view('admin/addClient')->withErrors($validator->errors());
+            }else{
+                DB::table('clients')->insert(
+                    [
+                        'first_name' => $request->first_name,
+                        'last_name' => $request->last_name,
+                        'phone' => $request->phone,
+                        'email' => $request->email,
+                        'gender' => $request->gender,
+                        'seller' => Auth::id()
+                    ]
+                );
+                return view('admin/addClient')->with(["success"=>1]);
+            }
+        }else {
+            return view('admin/login');
         }
     }
 }
