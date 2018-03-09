@@ -23,12 +23,15 @@ Route::get('/', function () {
 /*
  *
  * Display Admin page
+ * All Orders
  *
  * */
 Route::any('/admin/', function () {
     if (Auth::check())
     {
-        return view('admin/dashboard');
+        $orders = new \App\Order();
+        $ordersAll = $orders->getAll();
+        return view('admin/dashboard')->with(["orders"=>$ordersAll]);
     }else {
         return view('admin/login');
     }

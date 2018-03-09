@@ -7,6 +7,7 @@
  */
 
 namespace App\Helper;
+use DateTime;
 use Illuminate\Support\Facades\Config;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Session;
@@ -29,5 +30,16 @@ class Helper
         if (Route::currentRouteName() == $route) return "active";
 
         return $output;
+    }
+    public static function checkDate($val){
+        if($val == date("Y-m-d")){
+            return "Today";
+        }
+        $yesterday  = date("Y-m-d", mktime(0, 0, 0, date("m"), date("d")-1, date("Y")));
+        if($val == $yesterday){
+            return "Yesterday";
+        }
+        $date = new DateTime($val);
+        return $date->format('d.m.y');
     }
 }
