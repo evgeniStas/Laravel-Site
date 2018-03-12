@@ -27,7 +27,7 @@
         </select>
         <div>
             <button id="newClientBtn" class="btn btn-link">Add new client</button>
-                <div id="newClientDiv" style="display: none;">
+                <div id="newClientDiv" style="@if($errors->isEmpty())display: none; @endif">
                     <h3>Add new client</h3>
                     <?php echo Form::open(['route' => 'AddNewClient']) ?>
                     <div class="form-group">
@@ -60,12 +60,10 @@
             </div>
         </div>
         <h3>Choose category</h3>
-        <ul class="nav nav-pills nav-fill">
+        <select class="custom-select">
             @foreach ($categories as $category)
-                <li class="nav-item">
-                    <a class="nav-link" href="#">{{ $category->title }}</a>
-                </li>
+                <option value="{{ $category->id }}">{{ $category->title }}</option>
             @endforeach
-        </ul>
+        </select>
     </div>
 @endsection
