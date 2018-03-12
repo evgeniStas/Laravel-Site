@@ -1,6 +1,22 @@
 @extends('layouts.dashboard')
 
 @section('content')
+    <script>
+        $(function () {
+            $("#range").ionRangeSlider({
+                grid: true,
+                min: 1,
+                max: 20,
+                from: 1,
+                values: [
+                    "1 ton",
+                    "5-10 ton",
+                    "15-20 ton"
+                ]
+            });
+        });
+
+    </script>
     @if(!$errors->isEmpty())
         <div class="alert alert-danger" role="alert">
             @foreach ($errors->all() as $error)
@@ -72,5 +88,7 @@
             @endforeach
         </select>
         <div id="productsList"></div>
+        <h3>Choose Track</h3>
+        <input type="text" id="range" value="" name="range" />
     </div>
 @endsection

@@ -10,11 +10,15 @@
     <link href="<?php echo url('css/bootstrap.css') ?>" rel="stylesheet">
     <link href="<?php echo url('css/style.css') ?>" rel="stylesheet">
     <link href="<?php echo url('css/slick.css') ?>" rel="stylesheet">
+    <link href="<?php echo url('css/ion.rangeSlider.css') ?>" rel="stylesheet">
+    <link href="<?php echo url('css/ion.rangeSlider.skinFlat.css') ?>" rel="stylesheet">
+    <link href="<?php echo url('css/normalize.css') ?>" rel="stylesheet">
     <script src="//ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="<?php echo url('js/popper.min.js') ?>"></script>
     <script src="<?php echo url('js/bootstrap.js') ?>"></script>
     <script src="<?php echo url('js/main.js') ?>"></script>
     <script src="<?php echo url('js/slick.js') ?>"></script>
+    <script src="<?php echo url('js/ion.rangeSlider.js') ?>"></script>
     <script>
         var token = "{{ csrf_token() }}";
     </script>
