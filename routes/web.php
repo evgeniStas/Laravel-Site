@@ -110,4 +110,12 @@ Route::get('/admin/addClient/', function () {
 })->name('admin.addClient');
 Route::post('/admin/addClient/', 'AdminController@addClient')->name('AddNewClient');
 
+/*
+ *
+ * Get products of category
+ *
+ * */
+Route::any('/admin/getProducts/', 'AdminController@getProducts');
+Route::post('/admin/addClient/', 'AdminController@addClient')->name('AddNewClient');
+
 

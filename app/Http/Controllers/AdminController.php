@@ -88,4 +88,21 @@ class AdminController extends Controller
             return view('admin/login');
         }
     }
+
+    /*
+     *
+     * Get products of category
+     *
+     * */
+    public function getProducts(Request $request){
+        if (Auth::check())
+        {
+            $products = new \App\Product();
+            $productsAll = $products->getAll($request->category);
+            return view('admin/products')->with(["products"=>$productsAll]);
+        }else{
+            return view('admin/login');
+        }
+
+    }
 }

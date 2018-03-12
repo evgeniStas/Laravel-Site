@@ -34,4 +34,29 @@ $(function () {
         $("#newClientBtn").remove();
         $("#newClientDiv").css("display","block");
     });
+
+
+    $('#categoryList').change(function() {
+        var category = $(this).val();
+        if(category<1){
+            $("#productsList").html("");
+            return false;
+        }
+        $("#productsList").html("Loading");
+        $.ajax({
+            type:'POST',
+            url:'/admin/getProducts',
+            data: {category: category, _token: token},
+            success:function(data){
+                $("#productsList").html(data);
+                $('.carusel').slick({
+                    dots: true,
+                    infinite: true,
+                    arrows: false,
+                    slidesToShow: 2,
+                    adaptiveHeight: true
+                });
+            }
+        });
+    });
 });

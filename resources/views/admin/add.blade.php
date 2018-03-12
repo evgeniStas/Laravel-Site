@@ -1,7 +1,6 @@
 @extends('layouts.dashboard')
 
 @section('content')
-    <p>Add</p>
     @if(!$errors->isEmpty())
         <div class="alert alert-danger" role="alert">
             @foreach ($errors->all() as $error)
@@ -13,11 +12,17 @@
     @isset($success)
         <div class="alert alert-success">{{ trans('index.user_adding') }}</div>
     @endisset
-    <nav class="nav nav-pills nav-fill">
-        <a class="nav-item nav-link active" href="#">First step</a>
-        <a class="nav-item nav-link" href="#">Second step</a>
-        <a class="nav-item nav-link" href="#">Finish step</a>
-    </nav>
+    <ul class="nav nav-fill">
+        <li class="nav-item">
+            <a class="nav-link active" href="#">First</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="#">Second</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="#">Finish</a>
+        </li>
+    </ul>
     <div class="alert alert-light" role="alert">
         <h3>Choose client</h3>
         <select class="custom-select">
@@ -60,10 +65,12 @@
             </div>
         </div>
         <h3>Choose category</h3>
-        <select class="custom-select">
+        <select id="categoryList" class="custom-select">
+            <option value="0" selected>Choose category</option>
             @foreach ($categories as $category)
                 <option value="{{ $category->id }}">{{ $category->title }}</option>
             @endforeach
         </select>
+        <div id="productsList"></div>
     </div>
 @endsection
