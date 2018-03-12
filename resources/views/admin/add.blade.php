@@ -12,7 +12,9 @@
                     "1 ton",
                     "5-10 ton",
                     "15-20 ton"
-                ]
+                ],onChange: function (data) {
+                    OnChangeTrack(data.from);
+                },
             });
         });
 

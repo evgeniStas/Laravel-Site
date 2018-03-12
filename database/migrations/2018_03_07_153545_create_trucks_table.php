@@ -16,8 +16,10 @@ class CreateTrucksTable extends Migration
         Schema::create('trucks', function (Blueprint $table) {
             $table->increments('id');
             $table->string('length');
+            $table->tinyInteger('seller');
             $table->string('capacity');
             $table->double('price', 8, 2);
+            $table->enum('type', ['0', '1', '2']); // ['1 ton', '5-10 ton', '15-20 ton']
             $table->timestamps();
         });
     }
