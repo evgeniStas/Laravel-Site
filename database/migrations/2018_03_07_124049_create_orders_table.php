@@ -26,6 +26,7 @@ class CreateOrdersTable extends Migration
             $table->string('recipient_phone', 20);
             $table->string('info');
             $table->double('price', 8, 2);
+            $table->tinyInteger('discount')->default('5');
             $table->tinyInteger('type_pay')->default('1');
             $table->enum('status', ['1', '2', '3']); // ['open', 'close', 'cancel']
             $table->string('signature');
