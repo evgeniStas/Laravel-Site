@@ -60,6 +60,13 @@ $(function () {
         });
     });
 });
-function OnChangeTrack(id){
-    console.log(id);
+function OnChangeTruck(id){
+    $.ajax({
+        type:'POST',
+        url:'/admin/TrucksList',
+        data: {id: id, _token: token},
+        success:function(data){
+            $("#TrucksList").html(data);
+        }
+    });
 }

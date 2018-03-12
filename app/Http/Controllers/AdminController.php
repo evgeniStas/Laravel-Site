@@ -105,4 +105,21 @@ class AdminController extends Controller
         }
 
     }
+
+    /*
+     *
+     * Get truck list
+     *
+     * */
+    public function TrucksList(Request $request){
+        if (Auth::check())
+        {
+            $trucks = new \App\Truck();
+            $trucksAll = $trucks->getAll($request->id);
+            return view('admin/trucks')->with(["trucks"=>$trucksAll]);
+        }else{
+            return view('admin/login');
+        }
+
+    }
 }

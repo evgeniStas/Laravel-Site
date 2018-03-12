@@ -116,6 +116,19 @@ Route::post('/admin/addClient/', 'AdminController@addClient')->name('AddNewClien
  *
  * */
 Route::any('/admin/getProducts/', 'AdminController@getProducts');
+
+/*
+ *
+ * Add new Client
+ *
+ * */
 Route::post('/admin/addClient/', 'AdminController@addClient')->name('AddNewClient');
 
+
+/*
+ *
+ * Get trucks
+ *
+ * */
+Route::any('/admin/TrucksList/', 'AdminController@TrucksList');
 

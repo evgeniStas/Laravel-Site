@@ -13,7 +13,7 @@
                     "5-10 ton",
                     "15-20 ton"
                 ],onChange: function (data) {
-                    OnChangeTrack(data.from);
+                    OnChangeTruck(data.from);
                 },
             });
         });
@@ -90,7 +90,8 @@
             @endforeach
         </select>
         <div id="productsList"></div>
-        <h3>Choose Track</h3>
+        <h3>Choose Truck</h3>
         <input type="text" id="range" value="" name="range" />
+        <div id="TrucksList"></div>
     </div>
 @endsection
