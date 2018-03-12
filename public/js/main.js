@@ -30,4 +30,8 @@ $(function () {
     $( "#loginForm input" ).focusout(function() {
         $(this).parent().parent().find( ".placeholder" ).removeClass( "active" );
     });
+    $('#newClientBtn').click(function() {
+        $("#newClientBtn").remove();
+        $("#newClientDiv").css("display","block");
+    });
 });

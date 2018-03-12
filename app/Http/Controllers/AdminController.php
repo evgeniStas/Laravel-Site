@@ -40,7 +40,17 @@ class AdminController extends Controller
 
             if ($validator->fails())
             {
-                return view('admin/addClient')->withErrors($validator->errors());
+                if($request->AddOrder == 1){
+                    $clients = new \App\Client();
+                    $clientsAll = $clients->getAll();
+
+                    $categories = new \App\Category();
+                    $categoriesAll = $categories->getAll();
+
+                    return view('admin/add')->with(["clients"=>$clientsAll,"categories"=>$categoriesAll])->withErrors($validator->errors());
+                }else {
+                    return view('admin/addClient')->withErrors($validator->errors());
+                }
             }else{
                 DB::table('clients')->insert(
                     [
@@ -52,7 +62,16 @@ class AdminController extends Controller
                         'seller' => Auth::id()
                     ]
                 );
-                return view('admin/addClient')->with(["success"=>1]);
+                if($request->AddOrder == 1){
+                    $clients = new \App\Client();
+                    $clientsAll = $clients->getAll();
+
+                    $categories = new \App\Category();
+                    $categoriesAll = $categories->getAll();
+                    return view('admin/add')->with(["clients"=>$clientsAll,"categories"=>$categoriesAll,"success"=>1]);
+                }else {
+                    return view('admin/addClient')->with(["success" => 1]);
+                }
             }
         }else {
             return view('admin/login');

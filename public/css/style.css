@@ -117,3 +117,7 @@ input:-webkit-autofill:active {
 .NewUser {
     bottom: 100px;
 }
+#newClientDiv {
+    margin-bottom: 40px;
+    margin-top: 40px;
+}
