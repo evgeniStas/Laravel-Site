@@ -76,7 +76,11 @@ Route::get('/lang/{locale}', function ($locale) {
  *
  * */
 
-
+/*
+ *
+ * Add new order
+ *
+ * */
 Route::get('/admin/add/', function () {
     if (Auth::check())
     {
@@ -91,7 +95,11 @@ Route::get('/admin/add/', function () {
     }
 })->name('admin.addOrder');
 
-
+/*
+ *
+ * Add new client
+ *
+ * */
 Route::get('/admin/addClient/', function () {
     if (Auth::check())
     {

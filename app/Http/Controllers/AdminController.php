@@ -17,6 +17,11 @@ use Validator;
 
 class AdminController extends Controller
 {
+    /*
+     *
+     * Login seller, table : sellers
+     *
+     * */
     public function login(Request $request)
     {
         if (Auth::attempt(['email' => $request->email, 'password' => $request->password])) {
@@ -26,6 +31,12 @@ class AdminController extends Controller
             return view('admin/login')->with(["error_message"=>1]);
         }
     }
+
+    /*
+     *
+     * Add new client
+     *
+     * */
     public function addClient(Request $request){
 
         if (Auth::check())
@@ -38,9 +49,9 @@ class AdminController extends Controller
                 'email' => 'required|email|unique:clients|max:50'
             ]);
 
-            if ($validator->fails())
+            if ($validator->fails()) // Fail feelds
             {
-                if($request->AddOrder == 1){
+                if($request->AddOrder == 1){ // Return in add new order page
                     $clients = new \App\Client();
                     $clientsAll = $clients->getAll();
 
@@ -62,7 +73,7 @@ class AdminController extends Controller
                         'seller' => Auth::id()
                     ]
                 );
-                if($request->AddOrder == 1){
+                if($request->AddOrder == 1){ // Return in add new order page
                     $clients = new \App\Client();
                     $clientsAll = $clients->getAll();
 

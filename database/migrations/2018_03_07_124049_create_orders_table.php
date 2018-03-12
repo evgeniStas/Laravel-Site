@@ -32,6 +32,7 @@ class CreateOrdersTable extends Migration
             $table->string('signature');
             $table->tinyInteger('approve')->default('0'); // 0 : not approved, 1 : approved
             $table->tinyInteger('paid')->default('0'); // 0 : not paid, 1 : paid
+            $table->string('products');
             $table->timestamps();
         });
     }
