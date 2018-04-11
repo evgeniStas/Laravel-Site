@@ -70,3 +70,25 @@ function OnChangeTruck(id){
         }
     });
 }
+
+
+// select one item from list and add to order
+orderId = 0;
+function selectItem(productId,obj) {
+    var client = $('#client_select').val();
+
+    var $obj = $(obj);
+    if($obj.hasClass('selectedProduct'))
+        $obj.removeClass('selectedProduct');
+    else
+        $obj.addClass('selectedProduct');
+
+    $.ajax({
+        type:'POST',
+        url:'/admin/create_order_add_products',
+        data: {client: client,product: productId, _token: token, orderId:orderId},
+        success:function(data){
+            orderId = data;
+        }
+    });
+}

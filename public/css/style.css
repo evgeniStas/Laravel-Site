@@ -183,3 +183,12 @@ input:-webkit-autofill:active {
 #TrucksList .card {
     margin-top: 50px;
 }
+.card{
+
+}
+.itm{
+    width:100%;
+}
+.selectedProduct{
+    border: 1px solid forestgreen;
+}

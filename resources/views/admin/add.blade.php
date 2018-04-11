@@ -43,7 +43,7 @@
     </ul>
     <div class="alert alert-light" role="alert">
         <h3>Choose client</h3>
-        <select class="custom-select">
+        <select id="client_select" class="custom-select">
             @foreach ($clients as $client)
                 <option value="{{ $client->id }}">{{ $client->first_name }} {{ $client->last_name }}</option>
             @endforeach

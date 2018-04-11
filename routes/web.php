@@ -132,3 +132,5 @@ Route::post('/admin/addClient/', 'AdminController@addClient')->name('AddNewClien
  * */
 Route::any('/admin/TrucksList/', 'AdminController@TrucksList');
 
+Route::any('/admin/create_order_add_products/', 'AdminController@create_order_add_products');
+

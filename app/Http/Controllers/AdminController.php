@@ -10,6 +10,8 @@
 namespace App\Http\Controllers;
 
 
+use App\Order;
+use App\order_products;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
@@ -117,6 +119,34 @@ class AdminController extends Controller
             $trucks = new \App\Truck();
             $trucksAll = $trucks->getAll($request->id);
             return view('admin/trucks')->with(["trucks"=>$trucksAll]);
+        }else{
+            return view('admin/login');
+        }
+
+    }
+
+
+    public function create_order_add_products(Request $request){
+        if (Auth::check())
+        {
+            if($request->orderId == 0) //if the orderId id 0 so this is a new order - create a new order in DB
+                $orderId = Order::insertGetId(['seller' => 1, 'client' => 1]);
+            else
+                $orderId = $request->orderId;
+
+            $id = order_products::where('order',$orderId)->where('product', $request->product)->pluck('id')->first();
+            if(!$id)
+                order_products::create(['order' => $orderId, 'product' => $request->product, 'count' => 1]);
+            else{
+                $count = order_products::where('id',$id)->pluck('count')->first();
+                if($count == 0)
+                    order_products::where('order',$orderId)->where('product',$request->product)->update(['count' => 1]);
+                else
+                    order_products::where('order',$orderId)->where('product',$request->product)->update(['count' => 0]);
+            }
+
+
+            return $orderId;
         }else{
             return view('admin/login');
         }
